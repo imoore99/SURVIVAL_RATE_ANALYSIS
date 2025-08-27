@@ -48,7 +48,7 @@ Development Tools:
 - Git - Version control and collaboration
 
 LIVE PROJECT:
-- View Full Analysis & Visualizations → https://ian-moore-analytics.webflow.io/project/garch
+- View Full Analysis & Visualizations → https://ian-moore-analytics.webflow.io/project/survival-rate
 - Explore the complete project with interactive Kaplan-Meier curves, credit risk heatmaps, and comprehensive survival analysis insights on my portfolio site.
 
 CONTACT:
