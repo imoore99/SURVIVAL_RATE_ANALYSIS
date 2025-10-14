@@ -12,7 +12,7 @@ from lifelines import KaplanMeierFitter, NelsonAalenFitter
 
 #import files
 import structure_loan_data
-import baseline
+import baseline_statistics
 import combined_survival_metrics
 
 # Page Configuration
@@ -66,7 +66,7 @@ with warnings.catch_warnings():
 
 # In[ ]:
 #create baseline survival statistics dataframe
-baseline_df = baseline.generate_survival_statistics(kmf, naf)
+baseline_df = baseline_statistics.generate_survival_statistics(kmf, naf)
 st.subheader("Baseline Survival Statistics")
 st.dataframe(baseline_df)
 
