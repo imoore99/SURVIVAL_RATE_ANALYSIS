@@ -30,7 +30,7 @@ def generate_survival_statistics(kmf, naf):
         'Default Probability': default_prob_col,
         'Cumulative Hazard': cum_hazard_col
     })
-    #baseline_stats.index = baseline_stats['Months']
-    #baseline_stats.drop(columns=['Months'], inplace=True)
+    baseline_stats.index = baseline_stats['Months']
+    baseline_stats.drop(columns=['Months'], inplace=True)
     
     return baseline_stats

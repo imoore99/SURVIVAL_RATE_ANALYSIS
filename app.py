@@ -76,7 +76,7 @@ baseline_df = baseline_statistics.generate_survival_statistics(kmf, naf)
 baseline_df = baseline_df.style\
         .set_properties(**{'color': 'black'}, **{'font-size': '24px'})
 st.subheader("Baseline Survival Statistics")
-st.dataframe(baseline_df, hide_index=True)
+st.dataframe(baseline_df)
 
 # For loans that DO default, what's the median time?
 defaulted_loans = survival_data[survival_data['event'] == 1]
