@@ -1,5 +1,5 @@
 
-
+import pandas as pd
 
 
 def structure_loan_data(loan_data_csv):
