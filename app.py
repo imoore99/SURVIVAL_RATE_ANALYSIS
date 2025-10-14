@@ -73,8 +73,10 @@ with warnings.catch_warnings():
 # In[ ]:
 #create baseline survival statistics dataframe
 baseline_df = baseline_statistics.generate_survival_statistics(kmf, naf)
+baseline_df = baseline_df.style\
+        .set_properties(**{'color': 'black'}, **{'font-size': '24px'})
 st.subheader("Baseline Survival Statistics")
-st.dataframe(baseline_df)
+st.dataframe(baseline_df, hide_index=True)
 
 # For loans that DO default, what's the median time?
 defaulted_loans = survival_data[survival_data['event'] == 1]
@@ -108,4 +110,4 @@ st.pyplot(fig)
 # In[ ]:
 st.divider(width="stretch")
 st.subheader("Survival Analysis Statistics")
-st.dataframe(styled_survival_rate_summary)
+st.dataframe(styled_survival_rate_summary, hide_index=True)

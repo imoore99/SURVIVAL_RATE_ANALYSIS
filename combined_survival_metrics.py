@@ -50,6 +50,12 @@ def create_combined_survival_analysis(survival_data, rate_period, score_tier, co
             total_loans = len(segment_data)
             defaults = segment_data['event'].sum()
             default_rate = (defaults / total_loans) * 100
+
+            risk_segment_col.append(segment)
+            default_rate_col.append(round(default_rate, 1).astype(str) + '%')
+            median_time_to_default_col.append(round(segment_data['duration_months'].median().astype(float), 1))
+            default_size_col.append(defaults)
+            sample_size_col.append(total_loans)
                         
             # Fit Kaplan-Meier for this segment
             kmf = KaplanMeierFitter()
@@ -83,8 +89,8 @@ def create_combined_survival_analysis(survival_data, rate_period, score_tier, co
             default_rate = (defaults / total_loans) * 100
 
             risk_segment_col.append(segment)
-            default_rate_col.append(round(default_rate, 1))
-            median_time_to_default_col.append(segment_data['duration_months'].median())
+            default_rate_col.append(round(default_rate, 1).astype(str) + '%')
+            median_time_to_default_col.append(round(segment_data['duration_months'].median().astype(float), 1))
             default_size_col.append(defaults)
             sample_size_col.append(total_loans)
                         
@@ -96,14 +102,14 @@ def create_combined_survival_analysis(survival_data, rate_period, score_tier, co
                 label=f'{segment} ({defaults} defaults | {round(default_rate, 1)}% default rate)'
                 )
             survival_prob_12 = kmf.survival_function_at_times(12).values[0]
-            survival_12mo_col.append(round(survival_prob_12*100, 1))
+            survival_12mo_col.append(round(survival_prob_12*100, 1).astype(str) + '%')
 
             survival_prob_24 = kmf.survival_function_at_times(24).values[0]
-            survival_24mo_col.append(round(survival_prob_24*100, 1))
+            survival_24mo_col.append(round(survival_prob_24*100, 1).astype(str) + '%')
 
             survival_prob_36 = kmf.survival_function_at_times(36).values[0]
-            survival_36mo_col.append(round(survival_prob_36*100, 1))
-                        
+            survival_36mo_col.append(round(survival_prob_36*100, 1).astype(str) + '%')
+
             # Plot survival curve
             plot_objects = kmf.plot_survival_function(
                     ax=baseline,
@@ -130,8 +136,8 @@ def create_combined_survival_analysis(survival_data, rate_period, score_tier, co
                 default_rate = (defaults / total_loans) * 100
 
                 risk_segment_col.append(segment)
-                default_rate_col.append(round(default_rate, 1))
-                median_time_to_default_col.append(segment_data['duration_months'].median())
+                default_rate_col.append(round(default_rate, 1).astype(str) + '%')
+                median_time_to_default_col.append(round(segment_data['duration_months'].median(), 1).astype(str))
                 default_size_col.append(defaults)
                 sample_size_col.append(total_loans)
                         
@@ -143,13 +149,13 @@ def create_combined_survival_analysis(survival_data, rate_period, score_tier, co
                     label=f'{segment} ({defaults} defaults | {round(default_rate, 1)}% default rate)'
                     )
                 survival_prob_12 = kmf.survival_function_at_times(12).values[0]
-                survival_12mo_col.append(round(survival_prob_12*100, 1))
+                survival_12mo_col.append(round(survival_prob_12*100, 1).astype(str) + '%')
 
                 survival_prob_24 = kmf.survival_function_at_times(24).values[0]
-                survival_24mo_col.append(round(survival_prob_24*100, 1))
+                survival_24mo_col.append(round(survival_prob_24*100, 1).astype(str) + '%')
 
                 survival_prob_36 = kmf.survival_function_at_times(36).values[0]
-                survival_36mo_col.append(round(survival_prob_36*100, 1))
+                survival_36mo_col.append(round(survival_prob_36*100, 1).astype(str) + '%')
                 
                         
                 # Plot survival curve
@@ -193,14 +199,10 @@ def create_combined_survival_analysis(survival_data, rate_period, score_tier, co
         '36 Month Survival Rate (%)': survival_36mo_col,
         'Number of Defaults': default_size_col
     })
-    survival_rate_summary.index = survival_rate_summary['Risk Segment']
-    survival_rate_summary.drop(columns=['Risk Segment'], inplace=True)
+    #survival_rate_summary.index = survival_rate_summary['Risk Segment']
+    #survival_rate_summary.drop(columns=['Risk Segment'], inplace=True)
 
-    def highlight_rows(row):
-        if row['Default Rate (%)'] > 15:  # Only high-risk segments
-            return ['background-color: coral'] * len(row)  # Coral color for high-risk
-        return [''] * len(row)
-
-    styled_survival_rate_summary = survival_rate_summary.style.apply(highlight_rows, axis=1)
+    styled_survival_rate_summary = survival_rate_summary.style\
+    .set_properties(**{'color': 'black'}, **{'font-size': '14px'})
 
     return fig, styled_survival_rate_summary

@@ -96,17 +96,7 @@ def prepare_survival_data(loan_data, observation_date=None):
         (observation_date - survival_data['open_date']).dt.days / 30.44
     ).round(2)
     
-    # Basic validation
-    print(f"  Observation Date: {observation_date.strftime('%Y-%m-%d')}")
-    print(f"  Total Loans: {len(survival_data):,}")
-    print(f"  Default Events: {survival_data['event'].sum():,} ({survival_data['event'].mean()*100:.1f}%)")
-    print(f"  Censored Observations: {(1-survival_data['event']).sum():,} ({(1-survival_data['event']).mean()*100:.1f}%)")
-    print(f"  Average Duration: {survival_data['duration_months'].mean():.1f} months")
-    print(f"  Duration Range: {survival_data['duration_months'].min():.1f} to {survival_data['duration_months'].max():.1f} months")
-    
     # Remove any negative durations (data quality issue)
     survival_data = survival_data[survival_data['duration_months'] >= 0]
-
-   
 
     return survival_data
