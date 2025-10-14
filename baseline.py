@@ -1,6 +1,7 @@
 
 
 import pandas as pd
+from lifelines import KaplanMeierFitter, NelsonAalenFitter
 
 def generate_survival_statistics(kmf, naf):
     time_points = [6, 12, 18, 24, 30, 36]
