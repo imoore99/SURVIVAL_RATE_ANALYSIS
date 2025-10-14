@@ -31,8 +31,12 @@ baseline = st.sidebar.checkbox(label="Include Baseline Survival Rate", label_vis
 # In[ ]:
 # Title and Text Components
 st.title("Credit Portfolio Survival Analysis")
-st.header("Kaplan-Meier Survival Curvies Applied to Unsecured Loan Portfolio")
-st.text("This application allows users to explore the survival rates of unsecured loan portfolios using Kaplan-Meier survival curves. Adjust the parameters in the sidebar to see how different factors affect survival rates.")
+st.header("Kaplan-Meier Survival Curves Applied to Unsecured Loan Portfolio")
+
+site_url = "https://cdn.prod.website-files.com/688125a82bfc6e536cc30914/689c191d8c33833818dbe635_SURVIVAL_RATE_ANALYSIS.pdf"
+git_url = "https://github.com/imoore99/SURVIVAL_RATE_ANALYSIS"
+
+st.markdown("This application allows users to explore the survival rates of unsecured loan portfolios using Kaplan-Meier survival curves. Adjust the parameters in the sidebar to see how different factors affect survival rates. View a detailed report for a comprehensive analysis [here](%s). The source code is available in this [github repository](%s)." % (site_url, git_url))
 st.divider(width="stretch")
 
 # In[ ]:
