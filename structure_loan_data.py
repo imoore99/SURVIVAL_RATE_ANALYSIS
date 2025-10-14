@@ -107,11 +107,6 @@ def prepare_survival_data(loan_data, observation_date=None):
     # Remove any negative durations (data quality issue)
     survival_data = survival_data[survival_data['duration_months'] >= 0]
 
-    survival_data = survival_data.style\
-    .set_properties(**{'color': 'black'})\
-    .set_table_styles([{
-        'selector': 'th',
-        'props': [('color', 'black'), ('font-weight', 'bold')]
-    }])
+   
 
     return survival_data
