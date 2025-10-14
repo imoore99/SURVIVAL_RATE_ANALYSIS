@@ -35,8 +35,10 @@ st.header("Kaplan-Meier Survival Curves Applied to Unsecured Loan Portfolio")
 
 site_url = "https://cdn.prod.website-files.com/688125a82bfc6e536cc30914/689c191d8c33833818dbe635_SURVIVAL_RATE_ANALYSIS.pdf"
 git_url = "https://github.com/imoore99/SURVIVAL_RATE_ANALYSIS"
-
-st.markdown("This application allows users to explore the survival rates of unsecured loan portfolios using Kaplan-Meier survival curves. Adjust the parameters in the sidebar to see how different factors affect survival rates. View a detailed report for a comprehensive analysis [here](%s). The source code is available in this [github repository](%s)." % (site_url, git_url))
+st.markdown("This application allows users to explore the survival rates of unsecured loan portfolio using Kaplan-Meier survival curves. Adjust the parameters in the sidebar to see how different factors affect survival rates. " \
+"The rate period is defined as the time before or after the Federal Reserve's interest rate changes. The rate tier is based on the borrower's credit score: " \
+"**Super-Prime** (730+), **Prime** (650-729), **Near-Prime** (600-649), **Subprime** (below 599)." \
+    " To learn more about the methodology and analysis, please refer to the detailed report [here](%s). The source code is available in this [GitHub repository](%s)." % (site_url, git_url))
 st.divider(width="stretch")
 
 # In[ ]:
