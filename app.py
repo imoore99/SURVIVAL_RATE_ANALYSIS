@@ -220,6 +220,40 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+st.markdown("""
+<style>
+/* Style ALL dataframe headers consistently - both baseline and survival statistics */
+.stDataFrame thead th {
+    background-color: #2c3e50 !important;
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    padding: 12px 8px !important;
+    text-align: center !important;
+    border: 1px solid #34495e !important;
+}
+
+/* Style row headers (index column) for consistency */
+.stDataFrame tbody th {
+    background-color: #2c3e50 !important;
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    padding: 12px 8px !important;
+    text-align: center !important;
+    border: 1px solid #34495e !important;
+}
+
+/* Keep data cells clean and readable */
+.stDataFrame tbody td {
+    font-size: 16px !important;
+    text-align: center !important;
+    padding: 10px 8px !important;
+    border: 1px solid #ddd !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # Page Configuration
 st.set_page_config(page_title="Credit Portfolio Survival Analysis", 
                    page_icon=None, 
