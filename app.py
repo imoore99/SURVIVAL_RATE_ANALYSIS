@@ -310,7 +310,11 @@ fig, styled_survival_rate_summary = combined_survival_metrics.create_combined_su
 
 st.divider(width="stretch")
 st.subheader("Survival Analysis by Credit Risk Segment")
-st.pyplot(fig)
+st.plotly_chart(fig, use_container_width=True, config={
+    'displayModeBar': True,
+    'modeBarButtonsToRemove': ['pan2d', 'lasso2d', 'select2d'],
+    'displaylogo': False
+})
 
 # In[ ]:
 st.divider(width="stretch")
