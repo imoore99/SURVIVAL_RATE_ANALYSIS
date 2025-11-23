@@ -16,12 +16,12 @@ import baseline_statistics
 import combined_survival_metrics
 
 ## Adding stylings
-
+# In[ ]:
 st.markdown("""
 <style>
 /* Target the exact hamburger menu button */
 button[data-testid="stExpandSidebarButton"] {
-    background-color: rgba(113, 172, 172, 0.7) !important;
+    background-color: rgba(255, 77, 77,0.7) !important;
     color: white !important;
     border: 2px solid #ffffff !important;
     border-radius: 8px !important;
@@ -32,7 +32,7 @@ button[data-testid="stExpandSidebarButton"] {
 }
 
 button[data-testid="stExpandSidebarButton"]:hover {
-    background-color: #0d5aa7 !important;
+    background-color: rgba(255, 77, 77, 1) !important;
     transform: scale(1.05);
 }
 
@@ -65,201 +65,13 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("""
-<style>
-/* Larger, more mobile-friendly multiselect controls */
-.stMultiSelect > label {
-    font-size: 18px !important;
-    font-weight: 600 !important;
-    margin-bottom: 8px !important;
-}
-
-/* Make the multiselect dropdown larger */
-.stMultiSelect [data-baseweb="select"] {
-    min-height: 50px !important;
-    font-size: 16px !important;
-}
-
-/* Larger text inside the multiselect */
-.stMultiSelect [data-baseweb="select"] > div {
-    font-size: 16px !important;
-    padding: 8px 12px !important;
-}
-
-/* Make the dropdown options larger when opened */
-.stMultiSelect [role="listbox"] [role="option"] {
-    font-size: 16px !important;
-    padding: 12px 16px !important;
-    min-height: 48px !important;
-}
-
-/* Better spacing for selected items */
-.stMultiSelect [data-baseweb="tag"] {
-    font-size: 14px !important;
-    padding: 6px 10px !important;
-    margin: 2px !important;
-}
-
-/* Make the X button to remove selections larger */
-.stMultiSelect [data-baseweb="tag"] button {
-    width: 20px !important;
-    height: 20px !important;
-}
-</style>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-<style>
-/* Change multiselect button colors from red to blue theme */
-.stMultiSelect [data-baseweb="tag"] {
-    background-color: #e3f2fd !important; /* Light blue background */
-    border: 1px solid #1f77b4 !important;
-    color: #1f77b4 !important;
-}
-
-/* Change the X button color from red to blue */
-.stMultiSelect [data-baseweb="tag"] button {
-    color: rgba(113, 172, 172, 0.7)  !important;
-    background-color: transparent !important;
-}
-
-.stMultiSelect [data-baseweb="tag"] button:hover {
-    background-color: rgba(113, 172, 172, 0.7) !important;
-    color: white !important;
-}
-
-/* Style the dropdown arrow and borders */
-.stMultiSelect [data-baseweb="select"] {
-    border-color: rgba(113, 172, 172, 0.7)  !important;
-}
-
-/* Selected item hover state */
-.stMultiSelect [data-baseweb="tag"]:hover {
-    background-color: #bbdefb !important;
-}
-</style>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-<style>
-/* Change checkbox color from red to blue */
-.stCheckbox > label > div:first-child > div > input[type="checkbox"]:checked + div {
-    background-color: #1f77b4 !important;
-    border-color: #1f77b4 !important;
-}
-
-/* Change the checkmark color to white */
-.stCheckbox > label > div:first-child > div > input[type="checkbox"]:checked + div::after {
-    color: white !important;
-}
-
-/* Hover state for checkbox */
-.stCheckbox > label > div:first-child > div:hover {
-    border-color: #1f77b4 !important;
-}
-
-/* Focus state for better accessibility */
-.stCheckbox > label > div:first-child > div > input[type="checkbox"]:focus + div {
-    box-shadow: 0 0 0 2px rgba(31, 119, 180, 0.2) !important;
-}
-</style>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-<style>
-/* Style the baseline statistics table headers */
-.stDataFrame thead th {
-    background-color: #2c3e50 !important;
-    color: white !important;
-    font-weight: bold !important;
-    font-size: 16px !important;
-    padding: 12px 8px !important;
-    text-align: center !important;
-    border: 1px solid #34495e !important;
-}
-
-/* Style the row headers (index column) */
-.stDataFrame tbody th {
-    background-color: #2c3e50 !important;
-    color: white !important;
-    font-weight: bold !important;
-    font-size: 16px !important;
-    padding: 12px 8px !important;
-    text-align: center !important;
-    border: 1px solid #34495e !important;
-}
-
-/* Keep data cells clean */
-.stDataFrame tbody td {
-    font-size: 16px !important;
-    text-align: center !important;
-    padding: 10px 8px !important;
-    border: 1px solid #ddd !important;
-}
-</style>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-<style>
-/* Center all section headers */
-.stApp h2 {
-    text-align: center !important;
-    margin-bottom: 1.5rem !important;
-}
-
-.stApp h3 {
-    text-align: center !important;
-    margin-bottom: 1rem !important;
-}
-
-/* Specifically target your section headers */
-.stMarkdown h2,
-.stMarkdown h3 {
-    text-align: center !important;
-}
-</style>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-<style>
-/* Style ALL dataframe headers consistently - both baseline and survival statistics */
-.stDataFrame thead th {
-    background-color: #2c3e50 !important;
-    color: white !important;
-    font-weight: bold !important;
-    font-size: 16px !important;
-    padding: 12px 8px !important;
-    text-align: center !important;
-    border: 1px solid #34495e !important;
-}
-
-/* Style row headers (index column) for consistency */
-.stDataFrame tbody th {
-    background-color: #2c3e50 !important;
-    color: white !important;
-    font-weight: bold !important;
-    font-size: 16px !important;
-    padding: 12px 8px !important;
-    text-align: center !important;
-    border: 1px solid #34495e !important;
-}
-
-/* Keep data cells clean and readable */
-.stDataFrame tbody td {
-    font-size: 16px !important;
-    text-align: center !important;
-    padding: 10px 8px !important;
-    border: 1px solid #ddd !important;
-}
-</style>
-""", unsafe_allow_html=True)
-
+# In[ ]:
 # Page Configuration
 st.set_page_config(page_title="Credit Portfolio Survival Analysis", 
                    page_icon=None, 
+                   #layout='centered', 
                    initial_sidebar_state='auto',
-                   layout='centered')  # Centers on browser
-
+                   layout="wide")  # Uses full browser width
 # In[ ]:
 # Sidebar Components
 rate_period = st.sidebar.multiselect("Select Rate Period", ["Post-Fed Rate Increase", "Pre-Fed Rate Increase"], default=["Post-Fed Rate Increase"])
@@ -344,11 +156,7 @@ fig, styled_survival_rate_summary = combined_survival_metrics.create_combined_su
 
 st.divider(width="stretch")
 st.subheader("Survival Analysis by Credit Risk Segment")
-st.plotly_chart(fig, use_container_width=True, config={
-    'displayModeBar': True,
-    'modeBarButtonsToRemove': ['pan2d', 'lasso2d', 'select2d'],
-    'displaylogo': False
-})
+st.pyplot(fig)
 
 # In[ ]:
 st.divider(width="stretch")
