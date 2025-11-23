@@ -15,7 +15,7 @@ import structure_loan_data
 import baseline_statistics
 import combined_survival_metrics
 
-## Adds styling to hamburger
+## Adding stylings
 st.markdown("""
 <style>
 /* Target the exact hamburger menu button */
@@ -60,6 +60,81 @@ st.markdown("""
 .stCheckbox > label > div:first-child {
     transform: scale(1.3);
     margin-right: 10px;
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<style>
+/* Larger, more mobile-friendly multiselect controls */
+.stMultiSelect > label {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    margin-bottom: 8px !important;
+}
+
+/* Make the multiselect dropdown larger */
+.stMultiSelect [data-baseweb="select"] {
+    min-height: 50px !important;
+    font-size: 16px !important;
+}
+
+/* Larger text inside the multiselect */
+.stMultiSelect [data-baseweb="select"] > div {
+    font-size: 16px !important;
+    padding: 8px 12px !important;
+}
+
+/* Make the dropdown options larger when opened */
+.stMultiSelect [role="listbox"] [role="option"] {
+    font-size: 16px !important;
+    padding: 12px 16px !important;
+    min-height: 48px !important;
+}
+
+/* Better spacing for selected items */
+.stMultiSelect [data-baseweb="tag"] {
+    font-size: 14px !important;
+    padding: 6px 10px !important;
+    margin: 2px !important;
+}
+
+/* Make the X button to remove selections larger */
+.stMultiSelect [data-baseweb="tag"] button {
+    width: 20px !important;
+    height: 20px !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<style>
+/* Change multiselect button colors from red to blue theme */
+.stMultiSelect [data-baseweb="tag"] {
+    background-color: #e3f2fd !important; /* Light blue background */
+    border: 1px solid #1f77b4 !important;
+    color: #1f77b4 !important;
+}
+
+/* Change the X button color from red to blue */
+.stMultiSelect [data-baseweb="tag"] button {
+    color: #1f77b4 !important;
+    background-color: transparent !important;
+}
+
+.stMultiSelect [data-baseweb="tag"] button:hover {
+    background-color: #1f77b4 !important;
+    color: white !important;
+}
+
+/* Style the dropdown arrow and borders */
+.stMultiSelect [data-baseweb="select"] {
+    border-color: #1f77b4 !important;
+}
+
+/* Selected item hover state */
+.stMultiSelect [data-baseweb="tag"]:hover {
+    background-color: #bbdefb !important;
 }
 </style>
 """, unsafe_allow_html=True)
