@@ -15,11 +15,12 @@ import structure_loan_data
 import baseline_statistics
 import combined_survival_metrics
 
+## Adds styling to hamburger
 st.markdown("""
 <style>
 /* Target the exact hamburger menu button */
 button[data-testid="stExpandSidebarButton"] {
-    background-color: #1f77b4 !important;
+    background-color: rgba(113, 172, 172, 0.7) !important;
     color: white !important;
     border: 2px solid #ffffff !important;
     border-radius: 8px !important;
@@ -38,6 +39,27 @@ button[data-testid="stExpandSidebarButton"]:hover {
 button[data-testid="stExpandSidebarButton"] span {
     color: white !important;
     font-weight: bold !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+## Checkbox improvements
+st.markdown("""
+<style>
+/* Larger checkbox and font for baseline survival rate */
+.stCheckbox > label {
+    font-size: 18px !important;
+    padding: 12px 0 !important;
+}
+
+.stCheckbox > label > div[data-testid="stMarkdownContainer"] {
+    font-size: 18px !important;
+}
+
+/* Make the actual checkbox bigger */
+.stCheckbox > label > div:first-child {
+    transform: scale(1.3);
+    margin-right: 10px;
 }
 </style>
 """, unsafe_allow_html=True)
