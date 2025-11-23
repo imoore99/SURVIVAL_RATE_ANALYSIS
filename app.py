@@ -15,12 +15,31 @@ import structure_loan_data
 import baseline_statistics
 import combined_survival_metrics
 
+st.markdown("""
+<style>
+/* Make hamburger menu more prominent */
+button[kind="header"] {
+    background-color: #1f77b4 !important;
+    color: white !important;
+    border: 2px solid #1f77b4 !important;
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+}
+
+button[kind="header"]:hover {
+    background-color: #0d5aa7 !important;
+    transform: scale(1.05);
+}
+</style>
+""", unsafe_allow_html=True)
+
 # Page Configuration
 st.set_page_config(page_title="Credit Portfolio Survival Analysis", 
                    page_icon=None, 
-                   #layout='centered', 
                    initial_sidebar_state='auto',
-                   layout="wide")  # Uses full browser width
+                   layout='centered')  # Centers on browser
 
 # In[ ]:
 # Sidebar Components
