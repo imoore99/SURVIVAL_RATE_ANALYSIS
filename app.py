@@ -199,6 +199,27 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+st.markdown("""
+<style>
+/* Center all section headers */
+.stApp h2 {
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.stApp h3 {
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Specifically target your section headers */
+.stMarkdown h2,
+.stMarkdown h3 {
+    text-align: center !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # Page Configuration
 st.set_page_config(page_title="Credit Portfolio Survival Analysis", 
                    page_icon=None, 
