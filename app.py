@@ -16,6 +16,7 @@ import baseline_statistics
 import combined_survival_metrics
 
 ## Adding stylings
+
 st.markdown("""
 <style>
 /* Target the exact hamburger menu button */
@@ -118,18 +119,18 @@ st.markdown("""
 
 /* Change the X button color from red to blue */
 .stMultiSelect [data-baseweb="tag"] button {
-    color: #1f77b4 !important;
+    color: rgba(113, 172, 172, 0.7)  !important;
     background-color: transparent !important;
 }
 
 .stMultiSelect [data-baseweb="tag"] button:hover {
-    background-color: #1f77b4 !important;
+    background-color: rgba(113, 172, 172, 0.7) !important;
     color: white !important;
 }
 
 /* Style the dropdown arrow and borders */
 .stMultiSelect [data-baseweb="select"] {
-    border-color: #1f77b4 !important;
+    border-color: rgba(113, 172, 172, 0.7)  !important;
 }
 
 /* Selected item hover state */
