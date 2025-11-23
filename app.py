@@ -17,20 +17,27 @@ import combined_survival_metrics
 
 st.markdown("""
 <style>
-/* Make hamburger menu more prominent */
-button[kind="header"] {
+/* Target the exact hamburger menu button */
+button[data-testid="stExpandSidebarButton"] {
     background-color: #1f77b4 !important;
     color: white !important;
-    border: 2px solid #1f77b4 !important;
+    border: 2px solid #ffffff !important;
     border-radius: 8px !important;
-    padding: 8px 12px !important;
+    padding: 10px !important;
     font-size: 18px !important;
-    font-weight: bold !important;
+    min-width: 45px !important;
+    min-height: 45px !important;
 }
 
-button[kind="header"]:hover {
+button[data-testid="stExpandSidebarButton"]:hover {
     background-color: #0d5aa7 !important;
     transform: scale(1.05);
+}
+
+/* Style the spans inside the button */
+button[data-testid="stExpandSidebarButton"] span {
+    color: white !important;
+    font-weight: bold !important;
 }
 </style>
 """, unsafe_allow_html=True)
