@@ -140,6 +140,65 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+st.markdown("""
+<style>
+/* Change checkbox color from red to blue */
+.stCheckbox > label > div:first-child > div > input[type="checkbox"]:checked + div {
+    background-color: #1f77b4 !important;
+    border-color: #1f77b4 !important;
+}
+
+/* Change the checkmark color to white */
+.stCheckbox > label > div:first-child > div > input[type="checkbox"]:checked + div::after {
+    color: white !important;
+}
+
+/* Hover state for checkbox */
+.stCheckbox > label > div:first-child > div:hover {
+    border-color: #1f77b4 !important;
+}
+
+/* Focus state for better accessibility */
+.stCheckbox > label > div:first-child > div > input[type="checkbox"]:focus + div {
+    box-shadow: 0 0 0 2px rgba(31, 119, 180, 0.2) !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<style>
+/* Style the baseline statistics table headers */
+.stDataFrame thead th {
+    background-color: #2c3e50 !important;
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    padding: 12px 8px !important;
+    text-align: center !important;
+    border: 1px solid #34495e !important;
+}
+
+/* Style the row headers (index column) */
+.stDataFrame tbody th {
+    background-color: #2c3e50 !important;
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    padding: 12px 8px !important;
+    text-align: center !important;
+    border: 1px solid #34495e !important;
+}
+
+/* Keep data cells clean */
+.stDataFrame tbody td {
+    font-size: 16px !important;
+    text-align: center !important;
+    padding: 10px 8px !important;
+    border: 1px solid #ddd !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # Page Configuration
 st.set_page_config(page_title="Credit Portfolio Survival Analysis", 
                    page_icon=None, 
@@ -205,7 +264,8 @@ st.dataframe(baseline_df)
 # For loans that DO default, what's the median time?
 defaulted_loans = survival_data[survival_data['event'] == 1]
 median_time_to_default = defaulted_loans['duration_months'].median()
-st.markdown(f"**Median time to default (for loans that default): {median_time_to_default:.1f} months**")
+st.markdown(f"""**Median time to default (for loans that default):**
+            **{median_time_to_default:.1f} months**""")
 
 # In[ ]:
 colors = [
